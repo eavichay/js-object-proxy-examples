@@ -13,7 +13,7 @@ const DOM = new Proxy({}, {
                 `<${key}${attributeNames.reduce(printAttr, '')}>`,
                 ...(isText ? [children] : children),
                 `</${ key }>\n`
-            ].join('\n');
+            ].join(' ');
             return result;
         }
     }

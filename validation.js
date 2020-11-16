@@ -18,6 +18,7 @@ const PERSON_SCHEMA = {
     name: value => typeof value === 'string',
     age: value => typeof value === 'number',
     hobby: value => ALLOWED_HOBBIES.includes(value),
+    arr: value => value instanceof Array
 };
 
 const OPEN_PERSON_SCHEMA = {
@@ -33,6 +34,7 @@ try {
     person.age = 42;
     person.hobby = 'none';
     freeman.someProp = 'Yay';
+    freeman.arr = [];
     person.someProp = 'Ooops';
 } catch (err) {
     console.error(err);
